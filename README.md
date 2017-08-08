@@ -3,26 +3,26 @@
 1. Register an account with [AWS](https://aws.amazon.com/)
 
 ## Quick setup of AWS Instance
-1. Click *Launch Instance*.
-2. Select *Ubuntu Server 16.04 LTS*.
-3. Make sure **free tier** is selected, click *Review and Launch*.
-4. Click *Launch*.
-5. Select *Create a new key pair*, give a name to your key pair, and *download key pair*.
-6. Click *Launch Instance*.
-7. Click *View Instances*.
+1. Click **Launch Instance**.
+2. Select **Ubuntu Server 16.04 LTS**.
+3. Make sure *free tier* is selected, click **Review and Launch**.
+4. Click **Launch**.
+5. Select **Create a new key pair**, give a name to your key pair, and **Download key pair**.
+6. Click **Launch Instance**.
+7. Click **View Instances**.
 
 ## Setup second instance
 1. Make sure the existing instance is selected.
-2. Click *Actions → Launch* more like this from the dashboard.
-3. Click *Launch*.
-4. Select *Choose an existing key pair and Launch Instances*.
+2. Click **Actions → Launch** more like this from the dashboard.
+3. Click **Launch**.
+4. Select **Choose an existing key pair and Launch Instances**.
 
 ## Configure security group
-1. In the AWS dashboard, click *Security Groups* under *Network & Security*.
+1. In the AWS dashboard, click **Security Groups** under **Network & Security**.
 2. Select the group that both instances under.
-3. Click *Action → Edit inbound rules*.
+3. Click **Action → Edit inbound rules**.
 4. Set Type: All Traffic; Protocol: All; Port Range: 0 - 65535; Source: Anywhere.
-5. *Save* settings.
+5. **Save** settings.
 
 ## (Optional) Full Detail
 [Getting Started with Amazon EC2 Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html?icmpid=docs_ec2_console)
@@ -30,7 +30,7 @@
 ## Connect to an Instance
 1. Launch terminal (command prompt).
 2. Make sure the downloaded key pair file is in the root directory, else move it here.
-3. In the AWS dashboard, select an Instance and click *Connect*.
+3. In the AWS dashboard, select an Instance and click **Connect**.
 4. Key in below command into the terminal, hit enter.
 ```
 $ chmod 400 <your key pair file name>
@@ -69,19 +69,19 @@ $ geth --datadir="eth_testdata/" account new
 $ sudo apt-get install nano
 ```
 
-2. Create **genesis.json** by below command:
+2. Create *genesis.json* by below command:
 ```
 $ touch genesis.json
 ```
 
-3. Open **genesis.json** with nano.
+3. Open *genesis.json* with nano.
 ```
 $ nano genesis.json
 ```
 
 4. Copy below and paste it into the text editor. Press CTRL-O, hit enter to save file.
 
-**genesis.json**
+*genesis.json*
 ```
 {
   "config": {
@@ -105,7 +105,7 @@ $ nano genesis.json
 }
 ```
 
-5. Press CTRL-x to exit.
+5. Press CTRL-X to exit.
 6. Make new folder
 ```
 $ mkdir eth_testdata
@@ -123,7 +123,7 @@ $ geth --datadir="eth_testdata" --networkid 12020 --nodiscover console
 
 9. Open a new terminal session.
 10. Go to AWS dashboard and connect to second instance. (Refer to *Connect to an Instance* above, skip the chmod command)
-11. Repeat steps in *Setting up a private testnet* and *Setup the genesis block* for the second instance.
+11. Repeat steps in **Setting up a private testnet** and **Setup the genesis block** for the second instance.
 
 ## Connecting the nodes (Method 1 - manual connect)
 1. We now have 2 nodes running on geth (node A & node B).
@@ -137,7 +137,7 @@ $ geth --datadir="eth_testdata" --networkid 12020 --nodiscover console
 "enode://a2d377166f5bb3ab25f588ff384ab8509ba848b22b29fa357af8f776a8c7c9589dc3f63c323539a24ace20161a87cf97dd5974867e031521cbd06256213ecee9@[::]:30303?discport=0"
 ```
 
-4. In node B, key in below command and paste the copied string into the parentheses. Replace the *[ : : ]* with node A’s IP address, hit enter.
+4. In node B, key in below command and paste the copied string into the parentheses. Replace the **[ : : ]** with node A’s IP address, hit enter.
 ```
 > admin.addPeer(<enode url>)
 ```
@@ -145,7 +145,7 @@ $ geth --datadir="eth_testdata" --networkid 12020 --nodiscover console
 5. Do vice versa for node A.
 
 ## Connecting the nodes (Method 2 - auto connect)
-1. Create a **static-nodes.json** in **<datadir>**.
+1. Create a *static-nodes.json* in *<datadir>*.
 ```
 $ touch eth_testdata/static-nodes.json
 ```
@@ -157,7 +157,7 @@ $ touch eth_testdata/static-nodes.json
 ]
 ```
 
-3. Replace *[ : : ]* with IP address of node that wish to connect upon launching geth.
+3. Replace **[ : : ]** with IP address of node that wish to connect upon launching geth.
 
 ### More info about connected peers
 ```
