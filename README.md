@@ -87,6 +87,7 @@ $ nano genesis.json
   "config": {
         "chainId": 0,
         "homesteadBlock": 0,
+        "eip150Block": 0,
         "eip155Block": 0,
         "eip158Block": 0
     },
